@@ -1,0 +1,75 @@
+PODS:
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.0)
+  - CardIO (5.4.1)
+  - DropDown (2.3.2)
+  - FacebookCore (0.4.0):
+    - Bolts (~> 1.9)
+    - FBSDKCoreKit (~> 4.36)
+  - FacebookLogin (0.4.0):
+    - Bolts (~> 1.9)
+    - FacebookCore (~> 0.4)
+    - FBSDKCoreKit (~> 4.36)
+    - FBSDKLoginKit (~> 4.36)
+  - FBSDKCoreKit (4.44.0):
+    - Bolts (~> 1.9)
+  - FBSDKLoginKit (4.44.0):
+    - FBSDKCoreKit
+  - IQKeyboardManager (6.0.4)
+  - OneSignal (2.9.5)
+  - PayPal-iOS-SDK (2.18.1):
+    - PayPal-iOS-SDK/CardIO (= 2.18.1)
+    - PayPal-iOS-SDK/Core (= 2.18.1)
+  - PayPal-iOS-SDK/CardIO (2.18.1):
+    - CardIO (~> 5.4.1)
+  - PayPal-iOS-SDK/Core (2.18.1)
+  - Stripe (15.0.0)
+  - SwiftMessages (4.0.0)
+
+DEPENDENCIES:
+  - DropDown (= 2.3.2)
+  - FacebookCore (= 0.4.0)
+  - FacebookLogin (= 0.4.0)
+  - FBSDKLoginKit
+  - IQKeyboardManager (= 6.0.4)
+  - OneSignal
+  - PayPal-iOS-SDK
+  - Stripe
+  - SwiftMessages (= 4.0.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Bolts
+    - CardIO
+    - DropDown
+    - FacebookCore
+    - FacebookLogin
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - IQKeyboardManager
+    - OneSignal
+    - PayPal-iOS-SDK
+    - Stripe
+    - SwiftMessages
+
+SPEC CHECKSUMS:
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
+  DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
+  FacebookCore: 770e57cfe250a4de4458b682191c0ff062dee247
+  FacebookLogin: eb0f2251aca835a94d70a5f7e580edc46d1e1603
+  FBSDKCoreKit: 8bcd4503afe43f28823c2175a6142a7f50f1bf28
+  FBSDKLoginKit: 93c5a407ab1a6a17b1b38cff57e89991f714d878
+  IQKeyboardManager: 29514134ef0334a6fa33cf4eee11c36c064baeaf
+  OneSignal: ccdeb961882f8668305e5b694e2cb7cb325fc907
+  PayPal-iOS-SDK: 10654cd111e911a9807bddb96fae81aacb8e9915
+  Stripe: 312b22a67af9fa55c246d26148b3f3a9636a0ff2
+  SwiftMessages: cd565e0e7d095584be1770c012c6b5be4183b5ee
+
+PODFILE CHECKSUM: 18f282ceaeefc3d44ad5214f1e2735fa4a82cc56
+
+COCOAPODS: 1.6.1
