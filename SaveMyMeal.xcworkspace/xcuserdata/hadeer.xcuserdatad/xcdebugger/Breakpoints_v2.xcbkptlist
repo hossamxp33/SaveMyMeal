@@ -106,7 +106,7 @@
                   moduleName = "SaveMyMeal"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Payment/Payment/Controller/PaymentController.swift"
-                  timestampString = "580220387.680182"
+                  timestampString = "580224984.5354249"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "147"
@@ -121,7 +121,7 @@
                   moduleName = "SaveMyMeal"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Payment/Payment/Controller/PaymentController.swift"
-                  timestampString = "580220387.681836"
+                  timestampString = "580224984.53773"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "148"
@@ -170,45 +170,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaveMyMeal/Authentication/Login/Controller/LoginController.swift"
-            timestampString = "580220387.2905051"
+            timestampString = "580224984.1283669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
             endingLineNumber = "81"
-            landmarkName = "unknown"
-            landmarkType = "0">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SaveMyMeal.LoginController.FBLoginButtonClicked() -&gt; ()"
-                  moduleName = "SaveMyMeal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Authentication/Login/Controller/LoginController.swift"
-                  timestampString = "580220387.702388"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81"
-                  offsetFromSymbolStart = "60">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FBSDKLoginManagerLoginResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SaveMyMeal.LoginController.FBLoginButtonClicked() -&gt; ()"
-                  moduleName = "SaveMyMeal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Authentication/Login/Controller/LoginController.swift"
-                  timestampString = "580220387.704108"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
+            landmarkName = "FBLoginButtonClicked()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SaveMyMeal/Authentication/Login/Controller/LoginController.swift"
+            timestampString = "580224984.128733"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "FBLoginButtonClicked()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SaveMyMeal/Authentication/Login/Controller/LoginController.swift"
+            timestampString = "580224984.128974"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "FBLoginButtonClicked()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SaveMyMeal/Authentication/Login/Controller/LoginController.swift"
+            timestampString = "580224984.129202"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "FBLoginButtonClicked()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
