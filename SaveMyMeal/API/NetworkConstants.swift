@@ -24,4 +24,10 @@ struct NetworkConstants {
     static var addOrder = "orders/addorder.json"
     static var restAmount = "restaurants/edit"
     static var getProfile = "users/getuserprofile/"
+    static var contactUs = "restaurants/contactus.json"
+    static var getRestByCatID = "restaurants/getrestaurantsbycatid/"
+    
+    
+    static var forgetPasslink = "http://savemymeal.codesroots.com/usermgmt/users/forgotPassword"
+    static var termsAndConditionslink = "http://savemymeal.codesroots.com/users/termsandconditions"
 }

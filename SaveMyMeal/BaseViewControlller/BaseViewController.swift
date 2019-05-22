@@ -62,6 +62,11 @@ class BaseViewController: UIViewController {
             UIApplication.shared.openURL(targetURL)
         }
     }
+    func pushWebViewVC(path: String){
+        let VC = WebViewVC()
+        VC.path = path
+        self.navigationController?.pushViewController(VC, animated: true)
+    }
     @objc func backButtonClicked(){
         backButton.parentViewController?.navigationController?.popViewController(animated: true)
     }

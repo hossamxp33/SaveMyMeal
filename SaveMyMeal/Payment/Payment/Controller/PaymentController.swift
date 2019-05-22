@@ -81,7 +81,7 @@ class PaymentController: BaseViewController ,UICollectionViewDelegate,UICollecti
        // }
     }
     @objc func termsButtonClicked(){
-        self.openURL(stringURL: "")
+        self.pushWebViewVC(path: NetworkConstants.termsAndConditionslink)
     }
     func addOrders(type: String){
         if !LoginModel.isLogged{

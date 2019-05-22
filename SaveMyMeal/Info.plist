@@ -15,12 +15,20 @@
 	<string>450151599127422</string>
 	<key>FacebookDisplayName</key>
 	<string>Hadeer&apos;s first app</string>
+    
+    
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>We want to get your profile picture for this app</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>comgooglemaps</string>
 		<string>com.paypal.ppclient.touch.v1</string>
 		<string>com.paypal.ppclient.touch.v2</string>
 		<string>org-appextension-feature-password-management</string>
+        <string>fbapi</string>
+        <string>fb-messenger-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
 	</array>
 	<key>UIAppFonts</key>
 	<array>

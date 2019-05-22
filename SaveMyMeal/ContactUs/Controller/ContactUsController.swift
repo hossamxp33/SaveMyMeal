@@ -31,7 +31,39 @@ class ContactUsController: BaseViewController,UITextViewDelegate {
         }
     }
     @objc func sendButtonClicked(){
+        guard let name = nameTextField.text , name != "" else {
+            showWarningMessages(body: "Your name is required")
+            return
+        }
+        guard let email = emailTextField.text , email != "" else {
+            showWarningMessages(body: "Your email is required")
+            return
+        }
+        guard let mobile = mobileTextField.text , mobile != "" else {
+            showWarningMessages(body: "Your mobile is required")
+            return
+        }
+        guard let message = messageTextView.text , message != "Message" ,message != "" else {
+            showWarningMessages(body: "Type a message")
+            return
+        }
         
+        let parameters : [String:String] = [
+            "name" : name,
+            "email" : email,
+            "phone" :  mobile,
+            "message" : message
+        ]
+        ApiService.SharedInstance.Post(URL:NetworkConstants.contactUs , dataarr: parameters){ (response) in
+            print(response)
+            let success = response["success"] as? Int
+            if success == 1 {
+                showSuccessMessage(body: "Thanks, your message delivered successfully")
+                self.navigationController?.popViewController(animated: true)
+            }else{
+                showErrorMessage(body: "There is some thing wrong please try again")
+            }
+        }
     }
     
     //MARK : - UI -
@@ -52,7 +84,7 @@ class ContactUsController: BaseViewController,UITextViewDelegate {
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
+           // contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
             ])
         
@@ -88,7 +120,7 @@ class ContactUsController: BaseViewController,UITextViewDelegate {
         sendButton.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 0.7).isActive = true
         sendButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 0).isActive = true
         sendButton.topAnchor.constraint(equalTo: messageTextView.bottomAnchor, constant: 25).isActive = true
-        sendButton.bottomAnchor.constraint(greaterThanOrEqualTo: contentView.bottomAnchor).isActive = true
+        sendButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         
     }
     

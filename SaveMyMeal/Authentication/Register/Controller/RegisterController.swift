@@ -17,7 +17,16 @@ class RegisterController: BaseViewController {
 
 
     var mode : registerVCMode = .Register
-    
+    var data : UserInfo?{
+        didSet{
+            if data == nil{ return }
+            userNameTextField.text = data?.username ?? "--"
+            firstNameTextField.text = data?.firstname ?? "--"
+            lastNameTextField.text = data?.lastname ?? "--"
+            emailTextField.text = data?.email ?? "--"
+            phoneTextField.text = data?.mobile ?? "--"
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,9 +53,9 @@ class RegisterController: BaseViewController {
         emailTextField.isUserInteractionEnabled = false
         phoneTextField.isUserInteractionEnabled = false
         registerButton.isHidden = true
-        
+        facebookLoginButton.isHidden = true
         //load profile data
-        
+        loadUserData()
         
         
         //populate ui
@@ -55,6 +64,24 @@ class RegisterController: BaseViewController {
 //        lastNameTextField.text = data.lastName
 //        emailTextField.text = data.email
 //        phoneTextField.itext = data.phone
+    }
+    func loadUserData(){
+        let url = NetworkConstants.getProfile + String(LoginModel.UserId) + ".json"
+        ApiService.SharedInstance.fetchFeedForUrl(URL: url){ resposeData in
+            do {
+                let userData = try JSONDecoder().decode(UserProfileModel.self, from: resposeData)
+                
+                DispatchQueue.main.async (execute: {
+                    if userData.data != nil && !userData.data!.isEmpty  {
+                       self.data = userData.data?[0]
+                    }
+                    
+                })
+            }  catch let jsonErr {
+                print(jsonErr)
+            }
+            
+        }
     }
     //MARK: - Buttons Actions -
     @objc func registerButtonClicked(){
@@ -97,6 +124,8 @@ class RegisterController: BaseViewController {
         
         let parameters : [String:String] = [
             "username" : username,
+            "firstname" : fristname,
+            "lastname" : lastname,
             "password" : password,
             "email" : email,
             "mobile" : phone,
@@ -154,7 +183,7 @@ class RegisterController: BaseViewController {
         stackView.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 20).isActive = true
         stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -30).isActive = true
         stackView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 30).isActive = true
-        stackView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.6).isActive = true
+        stackView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.55).isActive = true
         
         stackView.addArrangedSubview(userNameTextField)
         stackView.addArrangedSubview(firstNameTextField)

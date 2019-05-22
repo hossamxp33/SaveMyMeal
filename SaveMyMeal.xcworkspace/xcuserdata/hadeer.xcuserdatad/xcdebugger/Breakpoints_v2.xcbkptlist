@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaveMyMeal/Payment/Payment/Controller/PaymentController.swift"
-            timestampString = "580050620.433026"
+            timestampString = "580220387.289591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaveMyMeal/Payment/Payment/Controller/PaymentController.swift"
-            timestampString = "580050620.433086"
+            timestampString = "580220387.289662"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaveMyMeal/Payment/Payment/Controller/PaymentController.swift"
-            timestampString = "580050620.4331419"
+            timestampString = "580220387.289721"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
@@ -106,12 +106,12 @@
                   moduleName = "SaveMyMeal"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Payment/Payment/Controller/PaymentController.swift"
-                  timestampString = "580139614.2849081"
+                  timestampString = "580220387.680182"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "147"
                   endingLineNumber = "147"
-                  offsetFromSymbolStart = "457">
+                  offsetFromSymbolStart = "472">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -121,12 +121,12 @@
                   moduleName = "SaveMyMeal"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Payment/Payment/Controller/PaymentController.swift"
-                  timestampString = "580139614.287537"
+                  timestampString = "580220387.681836"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "148"
                   endingLineNumber = "148"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SaveMyMeal/Payment/Payment/Controller/PaymentController.swift"
-            timestampString = "580050620.433194"
+            timestampString = "580220387.289784"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
@@ -161,6 +161,54 @@
             endingLineNumber = "55"
             landmarkName = "MakeCartObject(Type:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SaveMyMeal/Authentication/Login/Controller/LoginController.swift"
+            timestampString = "580220387.2905051"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SaveMyMeal.LoginController.FBLoginButtonClicked() -&gt; ()"
+                  moduleName = "SaveMyMeal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Authentication/Login/Controller/LoginController.swift"
+                  timestampString = "580220387.702388"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FBSDKLoginManagerLoginResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SaveMyMeal.LoginController.FBLoginButtonClicked() -&gt; ()"
+                  moduleName = "SaveMyMeal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Authentication/Login/Controller/LoginController.swift"
+                  timestampString = "580220387.704108"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

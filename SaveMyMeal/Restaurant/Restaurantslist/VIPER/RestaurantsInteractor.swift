@@ -27,6 +27,10 @@ class RestaurantsInteractor : RestaurantsIteractorProtocol{
         
         print(urlString)
         
+        if cityId == nil && catId != nil{
+            urlString = NetworkConstants.getRestByCatID + "\(catId!)" + ".json"
+        }
+        
         ApiService.SharedInstance.fetchFeedForUrl(URL: urlString) { (data) in
             do {
                 let restaurants = try JSONDecoder().decode(RestaurantsModel.self, from: data)

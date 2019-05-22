@@ -33,12 +33,16 @@ extension HomeController : UICollectionViewDelegate,UICollectionViewDataSource,U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
        // navigationController?.pushViewController(RestaurantsController(), animated: true)
         //Just setSelected
-        categories[selectedCategoryIndex].selected = false
+        if selectedCategoryIndex > -1 {
+            categories[selectedCategoryIndex].selected = false
+        }
         categories[indexPath.row].selected = true
         selectedCategoryIndex = indexPath.row
         selectedCategoryId = categories[indexPath.row].id
         
         collectionView.reloadData()
+        
+        RestaurantsRouter.navigateToRestaurantsController(cityId: nil, catId: self.selectedCategoryId, controller: self)
     }
 }
 
