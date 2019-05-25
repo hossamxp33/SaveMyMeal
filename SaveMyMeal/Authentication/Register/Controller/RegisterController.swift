@@ -8,6 +8,9 @@
 
 import UIKit
 import FBSDKLoginKit
+import FacebookCore
+import FacebookLogin
+
 enum registerVCMode {
     case Register
     case Profile
@@ -47,13 +50,15 @@ class RegisterController: BaseViewController {
     func setupAsProfile(){
         //PrepareUI
         passwordTextField.isHidden = true
-        userNameTextField.isUserInteractionEnabled = false
-        firstNameTextField.isUserInteractionEnabled = false
-        lastNameTextField.isUserInteractionEnabled = false
-        emailTextField.isUserInteractionEnabled = false
-        phoneTextField.isUserInteractionEnabled = false
-        registerButton.isHidden = true
+        //userNameTextField.isUserInteractionEnabled = false
+       // firstNameTextField.isUserInteractionEnabled = false
+       // lastNameTextField.isUserInteractionEnabled = false
+       // emailTextField.isUserInteractionEnabled = false
+      //  phoneTextField.isUserInteractionEnabled = false
+       
         facebookLoginButton.isHidden = true
+        
+        registerButton.setTitle("Edit", for: .normal)
         //load profile data
         loadUserData()
         
@@ -66,6 +71,7 @@ class RegisterController: BaseViewController {
 //        phoneTextField.itext = data.phone
     }
     func loadUserData(){
+        print(LoginModel.UserId)
         let url = NetworkConstants.getProfile + String(LoginModel.UserId) + ".json"
         ApiService.SharedInstance.fetchFeedForUrl(URL: url){ resposeData in
             do {
@@ -103,15 +109,8 @@ class RegisterController: BaseViewController {
             showWarningMessages(body:"Last name required")
             return
         }
-        guard let password = passwordTextField.text, password != "" else {
-            //alert enter passsword
-            showWarningMessages(body:"Password Required")
-            return
-        }
-        if password.count < 8 {
-            showWarningMessages(body: "Password shouldn't be less than 8 charachters")
-            return
-        }
+        
+        
         guard let email = emailTextField.text, email != "" else {
             //alert Please confirm password
             showWarningMessages(body:"Email Required")
@@ -121,35 +120,121 @@ class RegisterController: BaseViewController {
             showWarningMessages(body:"Phone number required")
             return
         }
-        
-        let parameters : [String:String] = [
+        if mode == .Register {
+            guard let password = passwordTextField.text, password != "" else {
+                //alert enter passsword
+                showWarningMessages(body:"Password Required")
+                return
+            }
+            if  password.count < 8 {
+                showWarningMessages(body: "Password shouldn't be less than 8 charachters")
+                return
+            }
+            registerAPI(username: username,firstname: fristname,lastname: lastname,email: email,password: password,phone: phone){
+                success in}
+        }else{
+            editAPI(username: username, firstname: fristname, lastname: lastname, email: email, phone: phone)
+        }
+    }
+    func editAPI(username: String,firstname: String,lastname: String,email:String,phone: String? = nil){
+        var parameters : [String:String] = [
             "username" : username,
-            "firstname" : fristname,
+            "firstname" : firstname,
             "lastname" : lastname,
-            "password" : password,
+            "email" : email
+            ]
+        if phone != nil { parameters["mobile"] = phone }
+        
+        let url = NetworkConstants.editProfile + String(LoginModel.UserId) + ".json"
+        
+        ApiService.SharedInstance.Login(URL: url, dataarr: parameters) { (data) in
+            print(data)
+            let success = data["success"] as? Bool
+            
+            if !success! {
+                showErrorMessage(body: "Username Or Email is already exist")
+                
+            }else{
+                
+                showSuccessMessage(body: "Congrats,,Your info Updated successfully")
+                
+                self.navigationController?.popViewController(animated: true)
+                
+            }
+            
+        }
+        
+    }
+    func registerAPI(username: String,firstname: String,lastname: String,email:String, password: String? = nil ,phone: String? = nil,facebook_id : String? = nil , complition: @escaping (_ success: Bool)->()){
+        var parameters : [String:String] = [
+            "username" : username,
+            "firstname" : firstname,
+            "lastname" : lastname,
             "email" : email,
-            "mobile" : phone,
             "active" : "1",
             "email_verified" : "1",
             "user_group_id" : "1",
             ]
+        if phone != nil { parameters["mobile"] = phone }
+        if password != nil { parameters["password"] = password }
+        if facebook_id != nil { parameters["facebook_id"] = facebook_id}
+    
+        
         ApiService.SharedInstance.Login(URL: NetworkConstants.register, dataarr: parameters) { (data) in
             print(data)
             let response = LoginModel(response: data)
             
             if !response.success! {
                 showErrorMessage(body: "Username Or Email is already exist")
+                complition(false)
             }else{
                 // let id = data["id"] as! Int
                 // let token = data["token"] as! String
-                showSuccessMessage(body: "Congrats,,Registered completed successfully")
+                showSuccessMessage(body: "Congrats,,Registration completed successfully")
+                complition(true)
                 self.navigationController?.popViewController(animated: true)
                 
             }
             
         }
     }
-    
+    @objc func FBLoginButtonClicked() {
+        let loginManager = LoginManager()
+        loginManager.logIn(readPermissions: [.publicProfile ,.email], viewController: self) { (loginResult) in
+            switch loginResult {
+            case .failed(let error):
+                print(error)
+            case .cancelled:
+                print("User cancelled login.")
+            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+                self.getFBUserData()
+            }
+            
+        }
+    }
+    func getFBUserData(){
+        if((FBSDKAccessToken.current()) != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+                    let dict = result as! [String : String]
+                    //print(result!)
+                    print(dict)
+                    self.registerAPI(username: dict["name"] ?? "", firstname: dict["first_name"] ?? "", lastname: dict["last_name"] ?? "", email: dict["email"] ?? "",facebook_id: dict["id"] ?? "") {
+                        success in
+                        if !success {
+                            let loginManager = FBSDKLoginManager()
+                            loginManager.logOut()
+                        }
+                    }
+                    
+                }else{
+                    print(error)
+                    let loginManager = FBSDKLoginManager()
+                    loginManager.logOut()
+                }
+            })
+        }
+    }
     override func setupViews(){
         super.setupViews()
         
@@ -345,6 +430,7 @@ class RegisterController: BaseViewController {
     
     lazy var facebookLoginButton : FBSDKLoginButton = {
         let fbButton = FBSDKLoginButton()
+        fbButton.addTarget(self, action: #selector(FBLoginButtonClicked), for: .touchUpInside)
         fbButton.translatesAutoresizingMaskIntoConstraints = false
         return fbButton
     }()

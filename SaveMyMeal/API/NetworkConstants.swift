@@ -10,6 +10,7 @@ import Foundation
 
 struct NetworkConstants {
     static var BaseURL = "http://savemymeal.codesroots.com/api"
+    
     static var getCategories = "categories/getcategories.json"
     static var searchCity = "cities/searchbyword.json"
     static var getRestaurants = "restaurants/getrestaurants"
@@ -30,4 +31,6 @@ struct NetworkConstants {
     
     static var forgetPasslink = "http://savemymeal.codesroots.com/usermgmt/users/forgotPassword"
     static var termsAndConditionslink = "http://savemymeal.codesroots.com/users/termsandconditions"
+    static var facebookLogin = "users/facebooklogin.json"
+    static var editProfile = "users/edit/"
 }

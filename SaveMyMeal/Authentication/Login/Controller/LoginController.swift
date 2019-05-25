@@ -21,14 +21,12 @@ class LoginController: BaseViewController {
     
     //var presenter : LoginPresenterProtocol?
     
-    var dict : [String:AnyObject] = [:]
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
 
-        if let accessToken = FBSDKAccessToken.current(){
-            getFBUserData()
-        }
+       
     }
    
    @objc func loginButtonClicked(){
@@ -79,6 +77,7 @@ class LoginController: BaseViewController {
     }
     @objc func FBLoginButtonClicked() {
         let loginManager = LoginManager()
+       
         loginManager.logIn(readPermissions: [.publicProfile ,.email], viewController: self) { (loginResult) in
             switch loginResult {
             case .failed(let error):
@@ -88,26 +87,46 @@ class LoginController: BaseViewController {
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 self.getFBUserData()
             }
-            
-//            if error != nil
-//            {
-//                print(error)
-//            }else{
-//                print(loginResult)
-//            }
+
         }
     }
     func getFBUserData(){
         if((FBSDKAccessToken.current()) != nil){
-            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email"]).start(completionHandler: { (connection, result, error) -> Void in
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
-                    self.dict = result as! [String : AnyObject]
+                     let dict = result as! [String : String]
                     print(result!)
-                    print(self.dict)
+                    print(dict)
+                    self.facebookLoginAPI(facebook_id: dict["id"] ?? "")
                 }else{
                     print(error)
+                    let loginManager = FBSDKLoginManager()
+                    loginManager.logOut()
                 }
             })
+        }
+    }
+    func facebookLoginAPI(facebook_id: String){
+        let parameters : [String:String] = [
+            "facebook_id" : facebook_id
+        ]
+        print(parameters)
+        ApiService.SharedInstance.Login(URL: NetworkConstants.facebookLogin, dataarr: parameters){ (data) in
+            let response = LoginModel(response: data)
+            
+            
+            if !response.success!{
+                //showErrorMessage
+                let loginManager = FBSDKLoginManager()
+                loginManager.logOut()
+                showErrorMessage(body: response.message!)
+            }else{
+                //ShowMessageOfLoginSuccess
+                
+                
+                showSuccessMessage(body: "Login success")
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     override func setupViews(){
@@ -206,7 +225,7 @@ class LoginController: BaseViewController {
         button.setTitle("Login", for: .normal)
         button.backgroundColor = UIConstants.AppColor
         button.layer.cornerRadius = 5
-        button.addTarget(self, action: #selector(FBLoginButtonClicked), for: .touchUpInside)
+        button.addTarget(self, action: #selector(loginButtonClicked), for: .touchUpInside)
         
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -224,10 +243,10 @@ class LoginController: BaseViewController {
         return button
     }()
     
-    lazy var facebookLoginButton : LoginButton = {
-        let fbButton = LoginButton(readPermissions: [ .publicProfile, .email])
+    lazy var facebookLoginButton : FBSDKLoginButton = {
+        let fbButton = FBSDKLoginButton()
+        fbButton.addTarget(self, action: #selector(FBLoginButtonClicked), for: .touchUpInside)
         fbButton.translatesAutoresizingMaskIntoConstraints = false
-        fbButton.target(forAction: #selector(FBLoginButtonClicked), withSender: self)
         return fbButton
     }()
 }
