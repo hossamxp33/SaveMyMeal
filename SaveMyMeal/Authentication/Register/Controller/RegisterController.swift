@@ -16,7 +16,17 @@ enum registerVCMode {
     case Profile
 }
 
-class RegisterController: BaseViewController {
+class RegisterController: BaseViewController , FBSDKLoginButtonDelegate {
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if !result.isCancelled {
+            getFBUserData()
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+    }
+    
 
 
     var mode : registerVCMode = .Register
@@ -32,7 +42,8 @@ class RegisterController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        facebookLoginButton.readPermissions = ["public_profile","email"]
+        facebookLoginButton.delegate = self
         if mode == .Profile {
             setupAsProfile()
         }
@@ -214,7 +225,7 @@ class RegisterController: BaseViewController {
     }
     func getFBUserData(){
         if((FBSDKAccessToken.current()) != nil){
-            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email"]).start(completionHandler: { (connection, result, error) -> Void in
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, email, first_name, last_name"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
                     let dict = result as! [String : String]
                     //print(result!)
@@ -430,7 +441,7 @@ class RegisterController: BaseViewController {
     
     lazy var facebookLoginButton : FBSDKLoginButton = {
         let fbButton = FBSDKLoginButton()
-        fbButton.addTarget(self, action: #selector(FBLoginButtonClicked), for: .touchUpInside)
+        //fbButton.addTarget(self, action: #selector(FBLoginButtonClicked), for: .touchUpInside)
         fbButton.translatesAutoresizingMaskIntoConstraints = false
         return fbButton
     }()

@@ -122,7 +122,7 @@ class cartIDsEntity {
         }
     }
     static func getItem(of id: Int ,complition: @escaping(_ index:Int,_ item:cartItem?)->()){
-        let index =  cartIDsEntity.cartItems.firstIndex(where: { $0.id == id }) ?? -1
+        let index =  cartIDsEntity.cartItems!.indices.filter { cartIDsEntity.cartItems![$0].id == id }.first ?? -1
         if index != -1{
             let item  = cartIDsEntity.cartItems[index]
             complition(index,item)

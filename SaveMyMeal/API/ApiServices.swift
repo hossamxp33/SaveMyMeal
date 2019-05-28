@@ -83,6 +83,7 @@ class ApiService : NSObject {
         request.httpBody = try! JSONSerialization.data(withJSONObject: parameters, options: [])
         
         URLSession.shared.dataTask(with:request as URLRequest , completionHandler: { (data, response, error) in
+            print(request)
             if error != nil {
                 print(error)
                 return

@@ -11,7 +11,11 @@ import FBSDKLoginKit
 import FacebookLogin
 import FacebookCore
 
-class LoginController: BaseViewController {
+class LoginController: BaseViewController,FBSDKLoginButtonDelegate {
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+    }
+    
 
   
     
@@ -25,10 +29,18 @@ class LoginController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-
-       
+        
+     //   FBSDKLoginManager().logOut()
+       facebookLoginButton.delegate = self
     }
    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if !result.isCancelled {
+            
+            getFBUserData()
+        }
+    }
+    
    @objc func loginButtonClicked(){
     
         guard let userName = userNameTextField.text , userName != "" else {
@@ -82,6 +94,7 @@ class LoginController: BaseViewController {
             switch loginResult {
             case .failed(let error):
                 print(error)
+                loginManager.logOut()
             case .cancelled:
                 print("User cancelled login.")
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
@@ -245,8 +258,9 @@ class LoginController: BaseViewController {
     
     lazy var facebookLoginButton : FBSDKLoginButton = {
         let fbButton = FBSDKLoginButton()
-        fbButton.addTarget(self, action: #selector(FBLoginButtonClicked), for: .touchUpInside)
+       // fbButton.addTarget(self, action: #selector(FBLoginButtonClicked), for: .touchUpInside)
         fbButton.translatesAutoresizingMaskIntoConstraints = false
         return fbButton
     }()
+    
 }

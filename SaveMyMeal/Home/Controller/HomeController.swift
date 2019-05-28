@@ -14,7 +14,7 @@ class HomeController: BaseViewController {
     var cell = "cell"
     var categories : [HomeCategoriesViewModel] = []
     var selectedCategoryId : Int?
-    var selectedCategoryIndex : Int = -1
+    var selectedCategoryIndex : Int = 0
     var presenter : HomePresenterProtocol?
     var cities : [CityModel] = []
     
@@ -25,12 +25,9 @@ class HomeController: BaseViewController {
         }
         init_()
         citiesDropDownSelection()
-        //getHomeCategories()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         getHomeCategories()
     }
+   
     func init_(){
         passionCollectionView.register(PassionView.self, forCellWithReuseIdentifier: cell)
         passionCollectionView.delegate = self
@@ -52,9 +49,7 @@ class HomeController: BaseViewController {
         presenter?.getHomeCategories(completion: { (categories) in
           //  print(categories)
             self.categories = categories ?? []
-            if self.selectedCategoryIndex > -1 {
-                self.categories[self.selectedCategoryIndex].selected = true
-            }
+            
             self.passionCollectionView.reloadData()
         })
     }

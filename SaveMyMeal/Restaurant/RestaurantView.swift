@@ -33,8 +33,8 @@ class RestaurantView : UIView {
             rateView.text = "(\(data!.ratingCount))"
             priceLabel.text = "\(data!.price) L.E"
             oldPriceLabel.text = "\(data!.lastPrice) L.E"
-            statusImage.image = (data!.amount == 0) ? #imageLiteral(resourceName: "red-circle") : #imageLiteral(resourceName: "greenOval")
-            amountLabel.text = (data!.amount == 0) ? "Sold out" : "\(data!.amount) Left"
+            statusImage.image = (data!.amount <= 0) ? #imageLiteral(resourceName: "red-circle") : #imageLiteral(resourceName: "greenOval")
+            amountLabel.text = (data!.amount <= 0) ? "Sold out" : "\(data!.amount) Left"
             
             titleLabel.text = data!.name
             timeLabel.text = "\(data!.startTimeJoined) - \(data!.endTimeJoined)"

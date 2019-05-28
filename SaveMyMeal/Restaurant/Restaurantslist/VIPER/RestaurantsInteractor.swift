@@ -16,21 +16,19 @@ class RestaurantsInteractor : RestaurantsIteractorProtocol{
     
     func getRestaurants(cityId:Int?,catId: Int?, completion: @escaping([RestaurantModel]?)->()){
         
-        var urlString = NetworkConstants.getRestaurants
+        var urlString = ""
+        
         if cityId != nil{
-            urlString = urlString + "/\(cityId!)"
+            urlString = NetworkConstants.getRestaurants + "/\(cityId!)"
+        }else {
+            
+            urlString = NetworkConstants.getRestByCatID + "/\(catId!)"
+            
         }
-        if catId != nil{
-            urlString = urlString + "/\(catId!)"
-        }
+        
         urlString = urlString + ".json"
         
         print(urlString)
-        
-        if cityId == nil && catId != nil{
-            urlString = NetworkConstants.getRestByCatID + "\(catId!)" + ".json"
-        }
-        
         ApiService.SharedInstance.fetchFeedForUrl(URL: urlString) { (data) in
             do {
                 let restaurants = try JSONDecoder().decode(RestaurantsModel.self, from: data)

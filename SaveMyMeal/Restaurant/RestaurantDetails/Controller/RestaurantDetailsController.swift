@@ -34,7 +34,7 @@ class RestaurantDetailsController: BaseViewController {
        //
     }
     override func viewWillAppear(_ animated: Bool) {
-        if cartIDsEntity.cartItems.contains(where: {$0.id == data?.id}){
+        if cartIDsEntity.cartItems.contains(where: {$0.id == data?.id}) || (data?.amount ?? 0) <= 0{
             disableOrdering()
             cartIDsEntity.getItem(of: data?.id ?? -1) { (index, item) in
                 if let item = item {
@@ -121,6 +121,7 @@ class RestaurantDetailsController: BaseViewController {
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: navigationView.bottomAnchor),
+            scrollView.widthAnchor.constraint(equalTo:view.widthAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)

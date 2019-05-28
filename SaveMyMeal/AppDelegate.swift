@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Replace 'YOUR_APP_ID' with your OneSignal App ID.
         OneSignal.initWithLaunchOptions(launchOptions,
-                                        appId: "YOUR_ONESIGNAL_APP_ID",
+                                        appId: "495631db-654d-45cf-9fb6-c4492c477f1d",
                                         handleNotificationAction: nil,
                                         settings: onesignalInitSettings)
         

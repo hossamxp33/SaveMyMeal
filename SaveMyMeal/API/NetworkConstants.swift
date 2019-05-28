@@ -26,11 +26,11 @@ struct NetworkConstants {
     static var restAmount = "restaurants/edit"
     static var getProfile = "users/getuserprofile/"
     static var contactUs = "restaurants/contactus.json"
-    static var getRestByCatID = "restaurants/getrestaurantsbycatid/"
-    
+    static var getRestByCatID = "restaurants/getrestaurantsbycatid"
+    static var facebookLogin = "users/facebooklogin.json"
+    static var editProfile = "users/edit/"
     
     static var forgetPasslink = "http://savemymeal.codesroots.com/usermgmt/users/forgotPassword"
     static var termsAndConditionslink = "http://savemymeal.codesroots.com/users/termsandconditions"
-    static var facebookLogin = "users/facebooklogin.json"
-    static var editProfile = "users/edit/"
+    
 }
