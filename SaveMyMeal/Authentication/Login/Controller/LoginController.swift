@@ -38,6 +38,8 @@ class LoginController: BaseViewController,FBSDKLoginButtonDelegate {
         if !result.isCancelled {
             
             getFBUserData()
+        }else{
+            self.dismiss(animated: true, completion: nil)
         }
     }
     

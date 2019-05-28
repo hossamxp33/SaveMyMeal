@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FBSDKLoginKit
 
 class MoreController: BaseViewController ,UITableViewDelegate,UITableViewDataSource{
     let tableCell = "MoreCell"
@@ -55,6 +56,8 @@ class MoreController: BaseViewController ,UITableViewDelegate,UITableViewDataSou
     func logOut(){
         LoginModel.UserId = nil
         LoginModel.UserToken = nil
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
         loadMenuData()
         
     }

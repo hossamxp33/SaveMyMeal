@@ -20,6 +20,8 @@ class RegisterController: BaseViewController , FBSDKLoginButtonDelegate {
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if !result.isCancelled {
             getFBUserData()
+        }else{
+            self.dismiss(animated: true, completion: nil)
         }
     }
     

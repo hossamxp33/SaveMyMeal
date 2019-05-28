@@ -1245,7 +1245,7 @@
 				INFOPLIST_FILE = SaveMyMeal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SaveMyMeal;
+				PRODUCT_BUNDLE_IDENTIFIER = codesroots.SaveMyMeal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SaveMyMeal/SaveMyMeal-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -1264,7 +1264,7 @@
 				INFOPLIST_FILE = SaveMyMeal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SaveMyMeal;
+				PRODUCT_BUNDLE_IDENTIFIER = codesroots.SaveMyMeal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SaveMyMeal/SaveMyMeal-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -1282,7 +1282,7 @@
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SaveMyMeal.OneSignalNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = codesroots.SaveMyMeal.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -1300,7 +1300,7 @@
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SaveMyMeal.OneSignalNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = codesroots.SaveMyMeal.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
