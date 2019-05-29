@@ -25,10 +25,8 @@ class RestaurantView : UIView {
             //bgimage
             self.BGImage.loadImageUsingUrlString(data!.coverPhoto )
             //logoimage
-            let customImageView = CustomImageView()
-            customImageView.loadImageUsingUrlStringToUIImage(data!.logo){ image in
-                self.logoImage.image = image
-            }
+            self.logoImage.loadImageUsingUrlString(data!.logo)
+            
             rateView.rating = data!.ratingStars
             rateView.text = "(\(data!.ratingCount))"
             priceLabel.text = "\(data!.price) L.E"
@@ -309,9 +307,10 @@ class RestaurantView : UIView {
             return label
         }()
         //logo image
-        let logoImage : RoundedImageView = {
-            let imageView = RoundedImageView()
+        let logoImage : CustomImageView = {
+            let imageView = CustomImageView()
             imageView.image = #imageLiteral(resourceName: "retaurantLogo")
+            imageView.rounded = true
             imageView.contentMode = .scaleAspectFill
             imageView.translatesAutoresizingMaskIntoConstraints = false
             return imageView

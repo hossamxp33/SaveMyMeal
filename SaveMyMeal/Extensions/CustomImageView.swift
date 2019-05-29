@@ -14,7 +14,17 @@ let imageCache = NSCache<NSString, UIImage>()
 class CustomImageView: UIImageView {
     
     var imageUrlString: String?
-    
+    var rounded: Bool = false
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if rounded {
+            let shapeLayer = CAShapeLayer()
+            shapeLayer.path = UIBezierPath(ovalIn:
+                CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.width, height: bounds.height
+            )).cgPath
+            layer.mask = shapeLayer
+        }
+    }
     func loadImageUsingUrlString(_ urlString: String)  {
         
         imageUrlString = urlString
