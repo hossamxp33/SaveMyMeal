@@ -41,22 +41,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SaveMyMeal/Payment/Payment/Controller/PaymentController+PayPal.swift"
-            timestampString = "580050620.432629"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "payPalPaymentViewController(_:didComplete:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "SaveMyMeal/Payment/Payment/Controller/PaymentController.swift"
             timestampString = "580220387.289591"
             startingColumnNumber = "9223372036854775807"
@@ -97,38 +81,6 @@
             endingLineNumber = "147"
             landmarkName = "getEGP_USDRate()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SaveMyMeal.PaymentController.getEGP_USDRate() -&gt; ()"
-                  moduleName = "SaveMyMeal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Payment/Payment/Controller/PaymentController.swift"
-                  timestampString = "580744800.4206311"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "147"
-                  endingLineNumber = "147"
-                  offsetFromSymbolStart = "457">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Foundation.Data) -&gt; () in SaveMyMeal.PaymentController.getEGP_USDRate() -&gt; ()"
-                  moduleName = "SaveMyMeal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Payment/Payment/Controller/PaymentController.swift"
-                  timestampString = "580744800.423252"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "148"
-                  endingLineNumber = "148"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -144,22 +96,6 @@
             startingLineNumber = "148"
             endingLineNumber = "148"
             landmarkName = "getEGP_USDRate()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SaveMyMeal/Payment/Payment/Controller/PaymentController+PayPal.swift"
-            timestampString = "580050620.433278"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "MakeCartObject(Type:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -193,38 +129,6 @@
             endingLineNumber = "235"
             landmarkName = "getFBUserData()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FBSDKGraphRequestConnection&gt;, Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SaveMyMeal.RegisterController.getFBUserData() -&gt; ()"
-                  moduleName = "SaveMyMeal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Authentication/Register/Controller/RegisterController.swift"
-                  timestampString = "580744800.4465539"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "233"
-                  endingLineNumber = "233"
-                  offsetFromSymbolStart = "704">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (Swift.Optional&lt;__C.FBSDKGraphRequestConnection&gt;, Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SaveMyMeal.RegisterController.getFBUserData() -&gt; ()"
-                  moduleName = "SaveMyMeal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Authentication/Register/Controller/RegisterController.swift"
-                  timestampString = "580744800.448787"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "235"
-                  endingLineNumber = "235"
-                  offsetFromSymbolStart = "21">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -321,38 +225,6 @@
             endingLineNumber = "97"
             landmarkName = "FBLoginButtonClicked()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (FacebookLogin.LoginResult) -&gt; () in SaveMyMeal.LoginController.FBLoginButtonClicked() -&gt; ()"
-                  moduleName = "SaveMyMeal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Authentication/Login/Controller/LoginController.swift"
-                  timestampString = "580744800.479988"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
-                  offsetFromSymbolStart = "107">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (FacebookLogin.LoginResult) -&gt; () in SaveMyMeal.LoginController.FBLoginButtonClicked() -&gt; ()"
-                  moduleName = "SaveMyMeal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Authentication/Login/Controller/LoginController.swift"
-                  timestampString = "580744800.482733"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
-                  offsetFromSymbolStart = "198">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -385,68 +257,6 @@
             endingLineNumber = "181"
             landmarkName = "registerAPI(username:firstname:lastname:email:password:phone:facebook_id:complition:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "default argument 6 of SaveMyMeal.RegisterController.registerAPI(username: Swift.String, firstname: Swift.String, lastname: Swift.String, email: Swift.String, password: Swift.Optional&lt;Swift.String&gt;, phone: Swift.Optional&lt;Swift.String&gt;, facebook_id: Swift.Optional&lt;Swift.String&gt;, complition: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "SaveMyMeal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Authentication/Register/Controller/RegisterController.swift"
-                  timestampString = "580744800.5010689"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "179"
-                  endingLineNumber = "179"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "default argument 4 of SaveMyMeal.RegisterController.registerAPI(username: Swift.String, firstname: Swift.String, lastname: Swift.String, email: Swift.String, password: Swift.Optional&lt;Swift.String&gt;, phone: Swift.Optional&lt;Swift.String&gt;, facebook_id: Swift.Optional&lt;Swift.String&gt;, complition: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "SaveMyMeal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Authentication/Register/Controller/RegisterController.swift"
-                  timestampString = "580744800.503436"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "179"
-                  endingLineNumber = "179"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "default argument 5 of SaveMyMeal.RegisterController.registerAPI(username: Swift.String, firstname: Swift.String, lastname: Swift.String, email: Swift.String, password: Swift.Optional&lt;Swift.String&gt;, phone: Swift.Optional&lt;Swift.String&gt;, facebook_id: Swift.Optional&lt;Swift.String&gt;, complition: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "SaveMyMeal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Authentication/Register/Controller/RegisterController.swift"
-                  timestampString = "580744800.505949"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "179"
-                  endingLineNumber = "179"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SaveMyMeal.RegisterController.registerAPI(username: Swift.String, firstname: Swift.String, lastname: Swift.String, email: Swift.String, password: Swift.Optional&lt;Swift.String&gt;, phone: Swift.Optional&lt;Swift.String&gt;, facebook_id: Swift.Optional&lt;Swift.String&gt;, complition: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "SaveMyMeal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hadeer/Desktop/SaveMyMeal/SaveMyMeal/Authentication/Register/Controller/RegisterController.swift"
-                  timestampString = "580744800.508723"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "180"
-                  endingLineNumber = "180"
-                  offsetFromSymbolStart = "240">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

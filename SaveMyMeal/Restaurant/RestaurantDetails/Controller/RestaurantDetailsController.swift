@@ -121,7 +121,7 @@ class RestaurantDetailsController: BaseViewController {
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: navigationView.bottomAnchor),
-            scrollView.widthAnchor.constraint(equalTo:view.widthAnchor),
+            //scrollView.widthAnchor.constraint(equalTo:view.widthAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
@@ -201,6 +201,7 @@ class RestaurantDetailsController: BaseViewController {
     let scrollView : UIScrollView = {
        let scrollView = UIScrollView()
         scrollView.backgroundColor = .clear
+        
         scrollView.translatesAutoresizingMaskIntoConstraints = false
        return scrollView
     }()

@@ -8,13 +8,15 @@
 
 import Foundation
 import UIKit
+import CoreLocation
+
 class RestaurantViewModel {
     var id : Int = 0
     var amount: Int = 0
     var name: String = ""
     var resLat: Double = 0.0
     var resLong: Double = 0.0
-    var distance: Double = 0.0
+    var distance: Int = 0
     var description : String = ""
     var startTimeJoined : String = "00:00"
     var endTimeJoined: String = "00:00"
@@ -33,6 +35,12 @@ class RestaurantViewModel {
         self.name = data.name ?? ""
         self.resLat = data.resLat ?? 0.0
         self.resLong = data.resLong ?? 0.0
+        
+        let restLocation = CLLocation(latitude: self.resLat , longitude: self.resLong )
+        let distanceInKilometers = UserData.location.distance(from: restLocation) / 1000.00
+        let roundedDistanceKilometers = Int(round( distanceInKilometers))
+        self.distance = roundedDistanceKilometers
+        
         self.price = Double(data.price ?? "0.0") ?? 0.0
         self.lastPrice = Double(data.lastprice ?? 0)
         self.logo = data.logo ?? ""

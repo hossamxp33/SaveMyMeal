@@ -8,18 +8,15 @@
 
 import Foundation
 import UIKit
-import CoreLocation
+
 class RestaurantView : UIView {
     var logoPhotoLoaded : UIImage?
     var data : RestaurantViewModel?{
         didSet {
             if data == nil {return}
-            //distance
-            let restLocation = CLLocation(latitude: data?.resLat ?? 0.0, longitude: data?.resLong ?? 0.0)
             
-            let distanceInKilometers = UserData.location.distance(from: restLocation) / 1000.00
-            let roundedDistanceKilometers = String(Int(round( distanceInKilometers))) + "Km"
-            self.distanceLabel.text = roundedDistanceKilometers
+           
+            self.distanceLabel.text = String(data?.distance ?? 0)
             
             
             //bgimage

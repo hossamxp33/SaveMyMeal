@@ -26,10 +26,9 @@ class RestaurantsPresenter : RestaurantsPresenterProtocol {
         }
     }
     private func createRestaurantsViewModels(from restaurants: [RestaurantModel]) -> [RestaurantViewModel] {
-        var restVMArray = restaurants.map({return RestaurantViewModel(data: $0)})
-        restVMArray.sort {
-            $0.distance < $1.distance
-        }
-        return restVMArray
+        let restVMArray = restaurants.map({return RestaurantViewModel(data: $0)})
+        let sortedArrat = restVMArray.sorted(by: { $0.distance < $1.distance })
+        
+        return sortedArrat
     }
 }
